@@ -33,7 +33,15 @@ Il caricamento del firmware puo' avvenire in diversi modi; il sistema di compila
 
 Viene fornito un `Dockerfile` che configura un container pronto per la compilazione. Anche senza installare i pacchetti necessari, e' possibile compilare il progetto con i seguenti comandi:
 
+#### Linux
+
 ```
 docker build -t <tag_immagine> .
 docker run --rm -v `pwd`:`pwd` -w `pwd` <tag_immagine> scons
+```
+
+#### Windows
+```
+docker build -t <tag_immagine>
+docker run --rm -v ${PWD}:/usr/src/project -w /usr/src/project <tag_immagine> scons
 ```
